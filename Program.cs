@@ -36,35 +36,42 @@ namespace Shuffler
       }
       //display top card
       Console.WriteLine($"{shuffle[0]} is the top card in the shuffled deck.");
-      //ask user if they would like to see next card
-      Console.WriteLine("Would you like to display the next card in the shuffled deck? Valid entries are yes or no.");
-      //create variable from user's input
-      var nextCard = Console.ReadLine().ToLower();
-      //error correction on inputs
-      if (nextCard != "yes" && nextCard != "no")
+      //while loop to repeat, ask user if they would like to see next card
+      //end loop when we either run out of cards or user says no (nested for)
+
+      for (var l = 51; l > 0; l--)
       {
-        Console.WriteLine("That is not a valid entry. Please try again.");
-        nextCard = Console.ReadLine().ToLower();
-        if (nextCard == "yes")
+        Console.WriteLine("Would you like to display the next card in the shuffled deck? Valid entries are yes or no.");
+        //create variable from user's input
+        var nextCard = Console.ReadLine().ToLower();
+        //variable to hold truth val, while loop to continue showing cards
+        //error correction on inputs
+        if (nextCard != "yes" && nextCard != "no")
         {
-          Console.WriteLine($"{shuffle[1]} is the second card in the shuffled deck.");
-          Console.WriteLine("Thank you. Have a nice day!");
+          Console.WriteLine("That is not a valid entry. Please try again.");
+          nextCard = Console.ReadLine().ToLower();
+          if (nextCard == "yes")
+          {
+            Console.WriteLine($"{shuffle[1]} is the next card in the shuffled deck.");
+
+          }
+          else
+          {
+            l = 0;
+            Console.WriteLine("Thank you. Have a nice day!");
+          }
+        }
+        else if (nextCard == "yes")
+        {
+          Console.WriteLine($"{shuffle[1]} is the next card in the shuffled deck.");
+
         }
         else
         {
+          l = 0;
           Console.WriteLine("Thank you. Have a nice day!");
         }
-      }
-      else if (nextCard == "yes")
-      {
-        Console.WriteLine($"{shuffle[1]} is the second card in the shuffled deck.");
-        Console.WriteLine("Thank you. Have a nice day!");
-      }
-      else
-      {
-        Console.WriteLine("Thank you. Have a nice day!");
-      }
-      {
+
 
       }
 
