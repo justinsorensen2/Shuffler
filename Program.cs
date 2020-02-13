@@ -51,8 +51,9 @@ namespace Shuffler
         if (l % 2 != 0)
         {
           //deal top card to player1
-          Console.WriteLine($"{player1} you have been dealt the {shuffle[l]}.");
-          playerHand1.Add(shuffle[l]);
+          Console.WriteLine($"{player1} you have been dealt the {shuffle[0]}.");
+          playerHand1.Add(shuffle[0]);
+
           Console.WriteLine($"{player2} would you like to be dealt the next card in the shuffled deck? Valid entries are yes or no.");
           //create variable from user's input
           var nextCard = Console.ReadLine().ToLower();
@@ -66,8 +67,8 @@ namespace Shuffler
           else if (nextCard == "yes")
           {
             l--;
-            Console.WriteLine($"{shuffle[l]} is the next card in the shuffled deck.");
-            playerHand2.Add(shuffle[l]);
+            Console.WriteLine($"{shuffle[1]} is the next card in the shuffled deck.");
+            playerHand2.Add(shuffle[1]);
 
           }
           else
@@ -78,8 +79,9 @@ namespace Shuffler
         }
         else
         {
-          Console.WriteLine($"{player2} you have been dealt the {shuffle[l]}.");
-          playerHand2.Add(shuffle[l]);
+          Console.WriteLine($"{player2} you have been dealt the {shuffle[0]}.");
+          playerHand2.Add(shuffle[0]);
+
           Console.WriteLine($"{player1} would you like to be dealt the next card in the shuffled deck? Valid entries are yes or no.");
           //create variable from user's input
           var nextCard = Console.ReadLine().ToLower();
@@ -93,8 +95,8 @@ namespace Shuffler
           else if (nextCard == "yes")
           {
             l--;
-            Console.WriteLine($"{shuffle[l]} is the next card in the shuffled deck.");
-            playerHand1.Add(shuffle[l]);
+            Console.WriteLine($"{shuffle[1]} is the next card in the shuffled deck.");
+            playerHand1.Add(shuffle[1]);
 
           }
           else
