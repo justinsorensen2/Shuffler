@@ -50,16 +50,7 @@ namespace Shuffler
         {
           Console.WriteLine("That is not a valid entry. Please try again.");
           nextCard = Console.ReadLine().ToLower();
-          if (nextCard == "yes")
-          {
-            Console.WriteLine($"{shuffle[1]} is the next card in the shuffled deck.");
 
-          }
-          else
-          {
-            l = 0;
-            Console.WriteLine("Thank you. Have a nice day!");
-          }
         }
         else if (nextCard == "yes")
         {
